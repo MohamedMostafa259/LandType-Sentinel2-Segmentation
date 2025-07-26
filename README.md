@@ -82,10 +82,9 @@ The primary dataset contains **72 tiles** of **Dubai**, each segmented into **6 
 ## Repository Structure
 
 ```
-
 ├── data/
-│   ├── Semantic segmentation dataset/                  # Original images and masks organized by Tiles
-│   └── dataset.joblib                                  # Preprocessed dataset (cropped, patchified, rescaled)
+│   ├── Semantic segmentation dataset/          # Original images and masks organized by Tiles
+│   └── dataset.joblib                          # Preprocessed dataset (cropped, patchified, rescaled)
 ├── models/
 │   ├── satellite\_segmentation\_full.keras                # trained model using a custom U-Net
 │   └── satellite\_segmentation\_model\_pretraining.keras  # trained model using transfer learning
@@ -100,7 +99,6 @@ The primary dataset contains **72 tiles** of **Dubai**, each segmented into **6 
 │   └── GoogleMaps\_test2.jpg
 ├── utils.py                                               # Utility functions (diagnostics plotting)
 └── README.md                                              # This file
-
 ````
 
 <br>

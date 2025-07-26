@@ -82,22 +82,24 @@ The primary dataset contains **72 tiles** of **Dubai**, each segmented into **6 
 ## Repository Structure
 
 ```
-├── data/
-│   ├── Semantic segmentation dataset/          # Original images and masks organized by Tiles
-│   └── dataset.joblib                          # Preprocessed dataset (cropped, patchified, rescaled)
-├── models/
-│   ├── satellite\_segmentation\_full.keras                # trained model using a custom U-Net
-│   └── satellite\_segmentation\_model\_pretraining.keras  # trained model using transfer learning
+├── data/       →   Untracked
+├── models/     →   Untracked
 ├── notebooks/
 │   ├── dataPreparation.ipynb                              # Exploratory Data Analysis & preprocessing
 │   ├── modelTraining.ipynb                                # Model architecture, training, evaluation
 │   └── trackingWeightsAndBiases.ipynb                     # Experiment tracking with Weights & Biases
 ├── visulas/
-│   ├── original\_groundTruth\_prediction\_comparison.png  # Side-by-side image vs prediction
-│   ├── model\_diagnostics\_over\_epochs.png               # Training curves (loss, accuracy, IoU)
-│   ├── GoogleMaps\_test1.jpg                              # External satellite images used
-│   └── GoogleMaps\_test2.jpg
+│   ├── app_screenshot1.png                                # screenshot of the deployed Gradio app on Hugging Face
+│   ├── app_screenshot2.png                  
+│   ├── legend.png                                         # table containing color legends for each class
+│   ├── original_groundTruth_prediction_comparison.png     # Side-by-side image vs prediction
+│   ├── model_diagnostics_over_epochs.png                  # Training curves (loss, accuracy, IoU)
+│   └── test/...                                           # External satellite images used for testing generalization
+│   
 ├── utils.py                                               # Utility functions (diagnostics plotting)
+├── app.py                                                 # Gradio app
+├── requirements.txt                                               # Utility functions (diagnostics plotting)
+├── .gitignore                                      
 └── README.md                                              # This file
 ````
 

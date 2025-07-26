@@ -1,12 +1,10 @@
 # LandType-Sentinel2-Segmentation
 
-Semantic segmentation of satellite imagery from Sentinel-2 to classify land types such as water, vegetation, roads, buildings, and unpaved land. 
-
-I performed pixel-level semantic segmentation to accurately label different land cover types.
+Semantic segmentation of satellite imagery from Sentinel-2 to classify land types such as water, vegetation, roads, buildings, and unpaved land. I performed pixel-level semantic segmentation to accurately label different land cover types.
 
 ## Dataset Overview
 
-The primary dataset contains **72 high-resolution tiles** of **Dubai**, each segmented into **6 semantic classes**. These were obtained from MBRSC satellites and manually labeled.
+The primary dataset contains **72 tiles** of **Dubai**, each segmented into **6 semantic classes** (water, vegetation, roads, buildings, unpaved land, and unlabeled). These were obtained from MBRSC satellites and manually labeled.
 
 **Source**: [Kaggle – Semantic Segmentation of Aerial Imagery](https://www.kaggle.com/datasets/humansintheloop/semantic-segmentation-of-aerial-imagery)
 
@@ -37,9 +35,11 @@ The primary dataset contains **72 high-resolution tiles** of **Dubai**, each seg
 
     ![model_diagnostics_over_epochs](https://github.com/MohamedMostafa259/LandTypeClassification-Sentinel2/blob/main/visulas/model_diagnostics_over_epochs.png?raw=true)
 
-    Validation Accuracy: 89.5%
+    Validation Accuracy: **89.5%**
 
-    Validation IoU Score: 0.68
+    Validation IoU Score: **0.68**
+
+<br>
 
 ### Generalization Testing
 
@@ -47,7 +47,6 @@ The primary dataset contains **72 high-resolution tiles** of **Dubai**, each seg
 
     ![pred2_InriaAerialImageLabeling](https://github.com/MohamedMostafa259/LandTypeClassification-Sentinel2/blob/main/visulas/test/pred2_InriaAerialImageLabeling.png?raw=true)
 
-<br>
 
 * Also evaluated generalization on samples taken from **Google Maps**.
 
@@ -60,14 +59,9 @@ The primary dataset contains **72 high-resolution tiles** of **Dubai**, each seg
 
     The `app.py` hosts a Gradio interface allowing you to upload Sentinel-2 images and get real-time land type segmentation masks with a clear legend explaining color codes:
 
-    | Color | Class               |
-    |:-----:|---------------------|
-    | <span style="display:inline-block;width:20px;height:20px;background-color:#E2A929;border-radius:4px;"></span> | Water               |
-    | <span style="display:inline-block;width:20px;height:20px;background-color:#8429F6;border-radius:4px;"></span> | Land (unpaved area) |
-    | <span style="display:inline-block;width:20px;height:20px;background-color:#6EC1E4;border-radius:4px;"></span> | Road                |
-    | <span style="display:inline-block;width:20px;height:20px;background-color:#3C1098;border-radius:4px;"></span> | Building            |
-    | <span style="display:inline-block;width:20px;height:20px;background-color:#FEDD3A;border-radius:4px;"></span> | Vegetation          |
-    | <span style="display:inline-block;width:20px;height:20px;background-color:#9B9B9B;border-radius:4px;"></span> | Unlabeled           |
+    ![legend](https://github.com/MohamedMostafa259/LandTypeClassification-Sentinel2/blob/main/visulas/legend.png?raw=true)
+
+<br>
 
 - Built a **Gradio-based** interactive web app for real-time inference.
 
@@ -90,22 +84,22 @@ The primary dataset contains **72 high-resolution tiles** of **Dubai**, each seg
 ```
 
 ├── data/
-│   ├── Semantic segmentation dataset/        # Original images and masks organized by Tiles
-│   └── dataset.joblib                        # Preprocessed dataset (cropped, patchified, rescaled)
+│   ├── Semantic segmentation dataset/                  # Original images and masks organized by Tiles
+│   └── dataset.joblib                                  # Preprocessed dataset (cropped, patchified, rescaled)
 ├── models/
-│   ├── satellite\_segmentation\_full.keras    # trained model using a custom U-Net
+│   ├── satellite\_segmentation\_full.keras                # trained model using a custom U-Net
 │   └── satellite\_segmentation\_model\_pretraining.keras  # trained model using transfer learning
 ├── notebooks/
-│   ├── dataPreparation.ipynb                  # Exploratory Data Analysis & preprocessing
-│   ├── modelTraining.ipynb                    # Model architecture, training, evaluation
-│   └── trackingWeightsAndBiases.ipynb         # Experiment tracking with Weights & Biases
+│   ├── dataPreparation.ipynb                              # Exploratory Data Analysis & preprocessing
+│   ├── modelTraining.ipynb                                # Model architecture, training, evaluation
+│   └── trackingWeightsAndBiases.ipynb                     # Experiment tracking with Weights & Biases
 ├── visulas/
 │   ├── original\_groundTruth\_prediction\_comparison.png  # Side-by-side image vs prediction
-│   ├── model\_diagnostics\_over\_epochs.png     # Training curves (loss, accuracy, IoU)
-│   ├── GoogleMaps\_test1.jpg                   # External satellite images used
+│   ├── model\_diagnostics\_over\_epochs.png               # Training curves (loss, accuracy, IoU)
+│   ├── GoogleMaps\_test1.jpg                              # External satellite images used
 │   └── GoogleMaps\_test2.jpg
-├── utils.py                                  # Utility functions (diagnostics plotting)
-└── README.md                                 # This file
+├── utils.py                                               # Utility functions (diagnostics plotting)
+└── README.md                                              # This file
 
 ````
 

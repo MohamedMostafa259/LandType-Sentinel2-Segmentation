@@ -1,0 +1,8 @@
+numpy<2
+keras==3.10.0
+tensorflow==2.19.0
+gradio
+git+https://github.com/qubvel/segmentation_models.git@master#egg=segmentation-models
+pillow
+numpy
+matplotlib

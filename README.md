@@ -85,22 +85,22 @@ The primary dataset contains **72 tiles** of **Dubai**, each segmented into **6 
 ├── data/       →   Untracked
 ├── models/     →   Untracked
 ├── notebooks/
-│   ├── dataPreparation.ipynb                              # Exploratory Data Analysis & preprocessing
-│   ├── modelTraining.ipynb                                # Model architecture, training, evaluation
-│   └── trackingWeightsAndBiases.ipynb                     # Experiment tracking with Weights & Biases
+│   ├── dataPreparation.ipynb                           # Exploratory Data Analysis & preprocessing
+│   ├── modelTraining.ipynb                             # Model architecture, training, evaluation
+│   └── trackingWeightsAndBiases.ipynb                  # Experiment tracking with Weights & Biases
 ├── visulas/
-│   ├── app_screenshot1.png                                # screenshot of the deployed Gradio app on Hugging Face
+│   ├── app_screenshot1.png                             # screenshot of the deployed Gradio app on Hugging Face
 │   ├── app_screenshot2.png                  
-│   ├── legend.png                                         # table containing color legends for each class
-│   ├── original_groundTruth_prediction_comparison.png     # Side-by-side image vs prediction
-│   ├── model_diagnostics_over_epochs.png                  # Training curves (loss, accuracy, IoU)
-│   └── test/...                                           # External satellite images used for testing generalization
+│   ├── legend.png                                      # table containing color legends for each class
+│   ├── original_groundTruth_prediction_comparison.png  # Side-by-side image vs prediction
+│   ├── model_diagnostics_over_epochs.png               # Training curves (loss, accuracy, IoU)
+│   └── test/...                                        # External satellite images used for testing generalization
 │   
-├── utils.py                                               # Utility functions (diagnostics plotting)
-├── app.py                                                 # Gradio app
-├── requirements.txt                                               # Utility functions (diagnostics plotting)
+├── utils.py                                            # Utility functions (diagnostics plotting)
+├── app.py                                              # Gradio app
+├── requirements.txt                                    # Utility functions (diagnostics plotting)
 ├── .gitignore                                      
-└── README.md                                              # This file
+└── README.md                                           # This file
 ````
 
 <br>
